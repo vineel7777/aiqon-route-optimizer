@@ -1,0 +1,6 @@
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+pytest>=7.0        # tests
+streamlit>=1.30    # optional demo only
+reportlab>=4.0     # only to rebuild the PDF report

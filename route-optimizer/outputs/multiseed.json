@@ -1,0 +1,41 @@
+{
+  "n_seeds": 10,
+  "feasible_share": 0.837142857142857,
+  "table": [
+    {
+      "policy": "ours",
+      "mean_regret_pct": 1.437,
+      "sd_regret_pct": 1.191,
+      "mean_meets": 0.837,
+      "ours_better_in_n_seeds": NaN
+    },
+    {
+      "policy": "ours_det",
+      "mean_regret_pct": 2.064,
+      "sd_regret_pct": 1.45,
+      "mean_meets": 0.829,
+      "ours_better_in_n_seeds": 7.0
+    },
+    {
+      "policy": "cheapest",
+      "mean_regret_pct": 43.794,
+      "sd_regret_pct": 16.109,
+      "mean_meets": 0.649,
+      "ours_better_in_n_seeds": 10.0
+    },
+    {
+      "policy": "fastest",
+      "mean_regret_pct": 93.293,
+      "sd_regret_pct": 13.393,
+      "mean_meets": 0.426,
+      "ours_better_in_n_seeds": 10.0
+    },
+    {
+      "policy": "lowest_risk",
+      "mean_regret_pct": 95.989,
+      "sd_regret_pct": 13.304,
+      "mean_meets": 0.386,
+      "ours_better_in_n_seeds": 10.0
+    }
+  ]
+}

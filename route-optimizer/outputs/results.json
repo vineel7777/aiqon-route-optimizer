@@ -1,0 +1,138 @@
+{
+  "n_shipments": 35,
+  "n_routes": 137,
+  "summary": [
+    {
+      "policy": "ours",
+      "mean_regret_pct": 1.029,
+      "median_regret_pct": 0.0,
+      "oracle_match": 0.857,
+      "mean_true_p_on_time": 0.89,
+      "meets_requirements": 0.829,
+      "budget_violation": 0.0,
+      "freight_vs_cheapest_pct": 88.214,
+      "mean_days": 27.291,
+      "mean_p90": 32.992
+    },
+    {
+      "policy": "ours_det",
+      "mean_regret_pct": 3.908,
+      "median_regret_pct": 0.0,
+      "oracle_match": 0.686,
+      "mean_true_p_on_time": 0.885,
+      "meets_requirements": 0.8,
+      "budget_violation": 0.0,
+      "freight_vs_cheapest_pct": 83.448,
+      "mean_days": 26.506,
+      "mean_p90": 33.185
+    },
+    {
+      "policy": "cheapest",
+      "mean_regret_pct": 46.124,
+      "median_regret_pct": 2.455,
+      "oracle_match": 0.457,
+      "mean_true_p_on_time": 0.714,
+      "meets_requirements": 0.629,
+      "budget_violation": 0.0,
+      "freight_vs_cheapest_pct": 0.0,
+      "mean_days": 31.27,
+      "mean_p90": 39.358
+    },
+    {
+      "policy": "fastest",
+      "mean_regret_pct": 99.293,
+      "median_regret_pct": 52.439,
+      "oracle_match": 0.371,
+      "mean_true_p_on_time": 0.967,
+      "meets_requirements": 0.286,
+      "budget_violation": 0.629,
+      "freight_vs_cheapest_pct": 391.574,
+      "mean_days": 8.572,
+      "mean_p90": 10.391
+    },
+    {
+      "policy": "lowest_risk",
+      "mean_regret_pct": 101.923,
+      "median_regret_pct": 52.439,
+      "oracle_match": 0.229,
+      "mean_true_p_on_time": 0.933,
+      "meets_requirements": 0.257,
+      "budget_violation": 0.657,
+      "freight_vs_cheapest_pct": 395.78,
+      "mean_days": 9.333,
+      "mean_p90": 10.508
+    },
+    {
+      "policy": "random",
+      "mean_regret_pct": 94.794,
+      "median_regret_pct": 84.12,
+      "oracle_match": 0.268,
+      "mean_true_p_on_time": 0.658,
+      "meets_requirements": 0.407,
+      "budget_violation": 0.214,
+      "freight_vs_cheapest_pct": 119.576,
+      "mean_days": 28.838,
+      "mean_p90": 34.519
+    }
+  ],
+  "by_profile": [
+    {
+      "profile": "balanced",
+      "cheapest": 1.02,
+      "fastest": 273.32,
+      "ours": 0.0
+    },
+    {
+      "profile": "cost_sensitive",
+      "cheapest": 0.0,
+      "fastest": 0.0,
+      "ours": 0.64
+    },
+    {
+      "profile": "high_value",
+      "cheapest": 62.43,
+      "fastest": 48.72,
+      "ours": 0.85
+    },
+    {
+      "profile": "urgent",
+      "cheapest": 83.5,
+      "fastest": 43.59,
+      "ours": 2.19
+    }
+  ],
+  "stability": {
+    "mean": 0.9318571428571429,
+    "share_robust": 0.8857142857142857,
+    "share_close": 0.0,
+    "vs_regret": [
+      {
+        "label": "moderate",
+        "n": 5,
+        "mean_regret_pct": 0.0
+      },
+      {
+        "label": "robust",
+        "n": 30,
+        "mean_regret_pct": 1.2
+      }
+    ]
+  },
+  "profile_switch_rate": {
+    "balanced~urgent": 0.17142857142857143,
+    "balanced~cost_sensitive": 0.0,
+    "balanced~high_value": 0.11428571428571428,
+    "urgent~cost_sensitive": 0.17142857142857143,
+    "urgent~high_value": 0.17142857142857143,
+    "cost_sensitive~high_value": 0.11428571428571428,
+    "mean": 0.12380952380952381
+  },
+  "relaxed_count": 6,
+  "pareto_dominated_share": 0.2576190476190476,
+  "decision_mix": {
+    "cheapest": 18,
+    "fastest": 0,
+    "air": 6,
+    "balanced_other": 11
+  }
+}

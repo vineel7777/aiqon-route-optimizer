@@ -1,0 +1,744 @@
+SHIPMENT SHP-001: CHE→NYC, 4 TEU commodity | profile=cost_sensitive | deadline 48 d | budget $11,090
+Priorities: cost 60%, time 15%, spread 15%, exposure 10%; must reach on time with ≥60% probability.
+
+RECOMMENDED: SHP-001-R2 — CHE → CMB → CPT → NYC (sea)  [lowest exposure]
+  Freight $8,443 | expected transit 37.7 d (P50 36.1, P90 42.9) | P(delay≥1d) 50% | P(on time) 98% | exposure 0.33
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → NYC (sea)), it costs $600 (8%) more in freight; adds 0.6 days of expected transit; cuts delay probability from 59% to 50%; pulls in worst-case (P90) arrival from 45.9 to 42.9 days. Expected delay cost is lower by $345 (at $160/day for this cargo).
+  • Runner-up is SHP-001-R1 (CHE → CMB → PSD → NYC (sea)); it loses by 0.077 score points, mainly on schedule predictability (P90-P50 spread).
+
+ALTERNATIVES CONSIDERED
+  – SHP-001-R1 CHE → CMB → PSD → NYC (sea): freight $7,842, E[time] 37.1 d, P(on time) 94% — lower overall score (0.17 vs 0.09); weakest on schedule predictability (P90-P50 spread).
+  – SHP-001-R3 CHE → CMB → SLL → PSD → NYC (sea): freight $8,645, E[time] 39.0 d, P(on time) 92% — dominated by R2 (which is at least as good on cost, time, predictability and exposure).
+  – SHP-001-R4 CHE → SIN → PSD → NYC (sea): freight $9,209, E[time] 42.5 d, P(on time) 80% — dominated by R2 (which is at least as good on cost, time, predictability and exposure).
+  – SHP-001-R5 CHE → CMB → JEA → PSD → NYC (sea): freight $9,269, E[time] 44.6 d, P(on time) 71% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+
+ROBUSTNESS
+  Same route wins in 97% of weight perturbations and 85% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the spread weight moved from 15% to 4%.
+
+====================================================================================================
+
+SHIPMENT SHP-002: NSA→NYC, 2 TEU pharma | profile=high_value | deadline 7 d | budget $31,760
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-002-R5 — NSA → NYC (air)  [fastest, lowest exposure]
+  Freight $22,731 | expected transit 3.4 d (P50 3.0, P90 3.6) | P(delay≥1d) 5% | P(on time) 98% | exposure 0.08
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → SLL → PSD → NYC (sea)), it costs $19,023 (513%) more in freight; saves 29.6 days of expected transit; cuts delay probability from 62% to 5%; pulls in worst-case (P90) arrival from 41.5 to 3.6 days. Expected delay cost is lower by $4,517 (at $1,000/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-002-R1 NSA → SLL → PSD → NYC (sea): freight $3,707, E[time] 33.0 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-002-R2 NSA → SLL → CPT → NYC (sea): freight $4,091, E[time] 36.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-002-R3 NSA → SLL → PSD → PIR → NYC (sea): freight $4,121, E[time] 38.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-002-R4 NSA → CMB → JEA → CPT → NYC (sea): freight $5,633, E[time] 47.7 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-003: MUN→HAM, 2 TEU electronics | profile=high_value | deadline 12 d | budget $21,550
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-003-R3 — MUN → HAM (air)  [fastest, lowest exposure]
+  Freight $17,938 | expected transit 2.7 d (P50 2.5, P90 2.8) | P(delay≥1d) 3% | P(on time) 99% | exposure 0.04
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: MUN → JEA → PSD → HAM (sea)), it costs $14,878 (486%) more in freight; saves 25.4 days of expected transit; cuts delay probability from 63% to 3%; pulls in worst-case (P90) arrival from 36.5 to 2.8 days. Expected delay cost is lower by $3,336 (at $700/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-003-R1 MUN → JEA → PSD → HAM (sea): freight $3,060, E[time] 28.1 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-003-R2 MUN → SLL → CPT → HAM (sea): freight $3,863, E[time] 35.3 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-004: CHE→FXT, 6 TEU electronics | profile=high_value | deadline 49 d | budget $18,910
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-004-R2 — CHE → CMB → CPT → FXT (sea)
+  Freight $11,814 | expected transit 34.7 d (P50 33.0, P90 40.3) | P(delay≥1d) 51% | P(on time) 99% | exposure 0.34
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → FXT (sea)), it costs $2,029 (21%) more in freight; adds 2.1 days of expected transit; cuts delay probability from 66% to 51%. Expected delay cost is lower by $5,400 (at $2,100/day for this cargo).
+  • Compared with the fastest option (R5: CHE → FXT (air)), it costs $42,831 (78%) less in freight; adds 32.0 days of expected transit; raises delay probability from 4% to 51%; pushes out worst-case (P90) arrival from 2.5 to 40.3 days.
+  • Runner-up is SHP-004-R1 (CHE → CMB → PSD → FXT (sea)); it loses by 0.522 score points, mainly on schedule predictability (P90-P50 spread).
+
+ALTERNATIVES CONSIDERED
+  – SHP-004-R1 CHE → CMB → PSD → FXT (sea): freight $9,786, E[time] 32.6 d, P(on time) 98% — lower overall score (0.56 vs 0.04); weakest on schedule predictability (P90-P50 spread).
+  – SHP-004-R3 CHE → CMB → SLL → PSD → FXT (sea): freight $11,282, E[time] 32.9 d, P(on time) 98% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+  – SHP-004-R4 CHE → PKG → SIN → PSD → FXT (sea): freight $13,112, E[time] 40.5 d, P(on time) 89% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+  ✗ SHP-004-R5 CHE → FXT (air): freight $54,645, E[time] 2.7 d, P(on time) 100% — EXCLUDED: over budget ($54,645 > $18,910).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the time weight moved from 15% to 72%.
+
+====================================================================================================
+
+SHIPMENT SHP-005: MUN→HAM, 1 TEU standard | profile=balanced | deadline 31 d | budget $3,360
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-005-R1 — MUN → JEA → PSD → HAM (sea)  [cheapest]
+  Freight $1,523 | expected transit 28.8 d (P50 26.6, P90 37.5) | P(delay≥1d) 67% | P(on time) 69% | exposure 0.50
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 100% vs 70% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R4: MUN → HAM (air)), it costs $7,468 (83%) less in freight; adds 26.2 days of expected transit; raises delay probability from 2% to 67%; pushes out worst-case (P90) arrival from 2.9 to 37.5 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-005-R2 MUN → SLL → CPT → HAM (sea): freight $1,951, E[time] 35.0 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (100%).
+  ✗ SHP-005-R3 MUN → CMB → JEA → PSD → HAM (sea): freight $2,212, E[time] 42.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (100%).
+  ✗ SHP-005-R4 MUN → HAM (air): freight $8,991, E[time] 2.6 d, P(on time) 100% — EXCLUDED: over budget ($8,991 > $3,360).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-006: CHE→RTM, 4 TEU commodity | profile=cost_sensitive | deadline 38 d | budget $8,610
+Priorities: cost 60%, time 15%, spread 15%, exposure 10%; must reach on time with ≥60% probability.
+
+RECOMMENDED: SHP-006-R1 — CHE → CMB → PSD → RTM (sea)  [cheapest, fastest]
+  Freight $6,358 | expected transit 31.0 d (P50 29.2, P90 39.6) | P(delay≥1d) 62% | P(on time) 86% | exposure 0.45
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+  • Runner-up is SHP-006-R2 (CHE → CMB → CPT → RTM (sea)); it loses by 0.500 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-006-R2 CHE → CMB → CPT → RTM (sea): freight $7,909, E[time] 35.3 d, P(on time) 83% — lower overall score (0.75 vs 0.25); weakest on expected landed cost.
+  ✗ SHP-006-R3 CHE → CMB → JEA → CPT → RTM (sea): freight $10,066, E[time] 43.8 d, P(on time) 0% — EXCLUDED: over budget ($10,066 > $8,610); on-time probability 0% below required 60%.
+  ✗ SHP-006-R4 CHE → PKG → CMB → CPT → RTM (sea): freight $10,170, E[time] 44.5 d, P(on time) 0% — EXCLUDED: over budget ($10,170 > $8,610); on-time probability 0% below required 60%.
+  ✗ SHP-006-R5 CHE → CMB → SLL → CPT → RTM (sea): freight $9,338, E[time] 40.7 d, P(on time) 39% — EXCLUDED: over budget ($9,338 > $8,610); on-time probability 39% below required 60%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R2 if the spread weight moved from 15% to 44%.
+
+====================================================================================================
+
+SHIPMENT SHP-007: MUN→NYC, 8 TEU standard | profile=balanced | deadline 36 d | budget $21,160
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-007-R1 — MUN → JEA → PSD → NYC (sea)  [cheapest]
+  Freight $14,122 | expected transit 32.8 d (P50 30.5, P90 41.1) | P(delay≥1d) 56% | P(on time) 74% | exposure 0.44
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R5: MUN → NYC (air)), it costs $76,634 (84%) less in freight; adds 29.7 days of expected transit; raises delay probability from 4% to 56%; pushes out worst-case (P90) arrival from 3.5 to 41.1 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-007-R2 MUN → SLL → CPT → NYC (sea): freight $16,556, E[time] 36.4 d, P(on time) 63% — EXCLUDED: on-time probability 63% below required 70%.
+  ✗ SHP-007-R3 MUN → SIN → CPT → NYC (sea): freight $20,756, E[time] 46.9 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 70%.
+  ✗ SHP-007-R4 MUN → SIN → PSD → NYC (sea): freight $19,278, E[time] 48.0 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 70%.
+  ✗ SHP-007-R5 MUN → NYC (air): freight $90,756, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($90,756 > $21,160).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 80% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-008: MUN→NYC, 6 TEU electronics | profile=high_value | deadline 43 d | budget $33,080
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-008-R2 — MUN → SLL → CPT → NYC (sea)
+  Freight $12,738 | expected transit 36.3 d (P50 34.8, P90 41.9) | P(delay≥1d) 50% | P(on time) 91% | exposure 0.32
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: MUN → JEA → PSD → NYC (sea)), it costs $1,790 (16%) more in freight; adds 3.3 days of expected transit; cuts delay probability from 65% to 50%. Expected delay cost is lower by $5,245 (at $2,100/day for this cargo).
+  • Compared with the fastest option (R3: MUN → NYC (air)), it costs $52,964 (81%) less in freight; adds 33.1 days of expected transit; raises delay probability from 4% to 50%; pushes out worst-case (P90) arrival from 3.6 to 41.9 days.
+  • Runner-up is SHP-008-R1 (MUN → JEA → PSD → NYC (sea)); it loses by 0.700 score points, mainly on geopolitical/congestion exposure.
+
+ALTERNATIVES CONSIDERED
+  – SHP-008-R1 MUN → JEA → PSD → NYC (sea): freight $10,947, E[time] 33.0 d, P(on time) 93% — lower overall score (0.85 vs 0.15); weakest on geopolitical/congestion exposure.
+  ✗ SHP-008-R3 MUN → NYC (air): freight $65,702, E[time] 3.2 d, P(on time) 100% — EXCLUDED: over budget ($65,702 > $33,080).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the time weight moved from 15% to 51%.
+
+====================================================================================================
+
+SHIPMENT SHP-009: CHE→FXT, 5 TEU commodity | profile=cost_sensitive | deadline 55 d | budget $11,230
+Priorities: cost 60%, time 15%, spread 15%, exposure 10%; must reach on time with ≥60% probability.
+
+RECOMMENDED: SHP-009-R1 — CHE → CMB → PSD → FXT (sea)  [cheapest, fastest]
+  Freight $8,212 | expected transit 30.9 d (P50 28.6, P90 39.0) | P(delay≥1d) 54% | P(on time) 100% | exposure 0.45
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+  • Runner-up is SHP-009-R2 (CHE → CMB → CPT → FXT (sea)); it loses by 0.500 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-009-R2 CHE → CMB → CPT → FXT (sea): freight $9,694, E[time] 34.2 d, P(on time) 100% — lower overall score (0.75 vs 0.25); weakest on expected landed cost.
+  ✗ SHP-009-R3 CHE → CMB → SLL → CPT → FXT (sea): freight $11,661, E[time] 39.0 d, P(on time) 99% — EXCLUDED: over budget ($11,661 > $11,230).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R2 if the spread weight moved from 15% to 44%.
+
+====================================================================================================
+
+SHIPMENT SHP-010: MUN→LAX, 8 TEU standard | profile=balanced | deadline 43 d | budget $23,980
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-010-R1 — MUN → PKG → LAX (sea)  [cheapest]
+  Freight $15,599 | expected transit 31.9 d (P50 29.4, P90 37.0) | P(delay≥1d) 47% | P(on time) 98% | exposure 0.26
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R3: MUN → LAX (air)), it costs $72,265 (82%) less in freight; adds 28.7 days of expected transit; raises delay probability from 3% to 47%; pushes out worst-case (P90) arrival from 3.4 to 37.0 days.
+  • Runner-up is SHP-010-R2 (MUN → SLL → CMB → SIN → LAX (sea)); it loses by 1.000 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-010-R2 MUN → SLL → CMB → SIN → LAX (sea): freight $20,895, E[time] 40.9 d, P(on time) 75% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+  ✗ SHP-010-R3 MUN → LAX (air): freight $87,864, E[time] 3.2 d, P(on time) 100% — EXCLUDED: over budget ($87,864 > $23,980).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-011: CHE→NYC, 7 TEU electronics | profile=high_value | deadline 47 d | budget $50,730
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-011-R2 — CHE → CMB → CPT → NYC (sea)
+  Freight $14,445 | expected transit 37.2 d (P50 34.6, P90 42.7) | P(delay≥1d) 47% | P(on time) 96% | exposure 0.33
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → NYC (sea)), it costs $780 (6%) more in freight; saves 0.7 days of expected transit; cuts delay probability from 73% to 47%; pulls in worst-case (P90) arrival from 46.6 to 42.7 days. Expected delay cost is lower by $7,998 (at $2,450/day for this cargo).
+  • Compared with the fastest option (R3: CHE → NYC (air)), it costs $66,181 (82%) less in freight; adds 34.0 days of expected transit; raises delay probability from 4% to 47%; pushes out worst-case (P90) arrival from 3.3 to 42.7 days.
+  • Runner-up is SHP-011-R1 (CHE → CMB → PSD → NYC (sea)); it loses by 0.878 score points, mainly on geopolitical/congestion exposure.
+
+ALTERNATIVES CONSIDERED
+  – SHP-011-R1 CHE → CMB → PSD → NYC (sea): freight $13,665, E[time] 37.9 d, P(on time) 91% — dominated by R2 (which is at least as good on cost, time, predictability and exposure).
+  ✗ SHP-011-R3 CHE → NYC (air): freight $80,626, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($80,626 > $50,730).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-012: CHE→NYC, 5 TEU standard | profile=balanced | deadline 44 d | budget $15,010
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-012-R2 — CHE → CMB → CPT → NYC (sea)
+  Freight $10,322 | expected transit 38.0 d (P50 36.6, P90 43.8) | P(delay≥1d) 56% | P(on time) 90% | exposure 0.35
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → NYC (sea)), it costs $732 (8%) more in freight; adds 0.6 days of expected transit; cuts delay probability from 70% to 56%; pulls in worst-case (P90) arrival from 45.6 to 43.8 days. Expected delay cost is lower by $1,348 (at $600/day for this cargo).
+  • Compared with the fastest option (R3: CHE → NYC (air)), it costs $46,034 (82%) less in freight; adds 34.9 days of expected transit; raises delay probability from 2% to 56%; pushes out worst-case (P90) arrival from 3.2 to 43.8 days.
+  • Runner-up is SHP-012-R1 (CHE → CMB → PSD → NYC (sea)); it loses by 0.540 score points, mainly on schedule predictability (P90-P50 spread).
+
+ALTERNATIVES CONSIDERED
+  – SHP-012-R1 CHE → CMB → PSD → NYC (sea): freight $9,590, E[time] 37.4 d, P(on time) 87% — lower overall score (0.58 vs 0.04); weakest on schedule predictability (P90-P50 spread).
+  ✗ SHP-012-R3 CHE → NYC (air): freight $56,357, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($56,357 > $15,010).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 95% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the time weight moved from 25% to 84%.
+
+====================================================================================================
+
+SHIPMENT SHP-013: NSA→FXT, 6 TEU standard | profile=balanced | deadline 43 d | budget $17,280
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-013-R1 — NSA → SLL → PSD → FXT (sea)  [cheapest]
+  Freight $9,100 | expected transit 27.7 d (P50 25.7, P90 36.3) | P(delay≥1d) 66% | P(on time) 98% | exposure 0.42
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R3: NSA → FXT (air)), it costs $42,832 (82%) less in freight; adds 25.1 days of expected transit; raises delay probability from 2% to 66%; pushes out worst-case (P90) arrival from 2.5 to 36.3 days.
+  • Runner-up is SHP-013-R2 (NSA → SLL → CPT → FXT (sea)); it loses by 0.043 score points, mainly on expected transit time.
+
+ALTERNATIVES CONSIDERED
+  – SHP-013-R2 NSA → SLL → CPT → FXT (sea): freight $11,423, E[time] 33.3 d, P(on time) 97% — lower overall score (0.44 vs 0.40); weakest on expected transit time.
+  ✗ SHP-013-R3 NSA → FXT (air): freight $51,933, E[time] 2.6 d, P(on time) 100% — EXCLUDED: over budget ($51,933 > $17,280).
+
+ROBUSTNESS
+  Same route wins in 62% of weight perturbations and 65% of delay-estimate perturbations → MODERATE.
+  Decision would switch to R2 if the spread weight moved from 20% to 24%.
+
+====================================================================================================
+
+SHIPMENT SHP-014: NSA→FXT, 8 TEU pharma | profile=high_value | deadline 38 d | budget $40,010
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-014-R2 — NSA → SLL → CPT → FXT (sea)
+  Freight $14,981 | expected transit 32.9 d (P50 30.6, P90 38.2) | P(delay≥1d) 45% | P(on time) 89% | exposure 0.25
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → SLL → PSD → FXT (sea)), it costs $2,575 (21%) more in freight; adds 3.5 days of expected transit; cuts delay probability from 70% to 45%. Expected delay cost is lower by $16,593 (at $4,000/day for this cargo).
+  • Compared with the fastest option (R4: NSA → FXT (air)), it costs $56,932 (79%) less in freight; adds 30.3 days of expected transit; raises delay probability from 3% to 45%; pushes out worst-case (P90) arrival from 2.8 to 38.2 days.
+  • Runner-up is SHP-014-R3 (NSA → JEA → PSD → FXT (sea)); it loses by 0.517 score points, mainly on schedule predictability (P90-P50 spread).
+
+ALTERNATIVES CONSIDERED
+  – SHP-014-R3 NSA → JEA → PSD → FXT (sea): freight $12,468, E[time] 29.3 d, P(on time) 90% — lower overall score (0.67 vs 0.15); weakest on schedule predictability (P90-P50 spread).
+  – SHP-014-R1 NSA → SLL → PSD → FXT (sea): freight $12,406, E[time] 29.4 d, P(on time) 89% — dominated by R3 (which is at least as good on cost, time, predictability and exposure).
+  ✗ SHP-014-R4 NSA → FXT (air): freight $71,912, E[time] 2.6 d, P(on time) 100% — EXCLUDED: over budget ($71,912 > $40,010).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 88% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R3 if the time weight moved from 15% to 44%.
+
+====================================================================================================
+
+SHIPMENT SHP-015: NSA→RTM, 1 TEU perishable | profile=urgent | deadline 13 d | budget $12,020
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-015-R4 — NSA → RTM (air)  [fastest, lowest exposure]
+  Freight $8,528 | expected transit 2.6 d (P50 2.5, P90 2.8) | P(delay≥1d) 3% | P(on time) 100% | exposure 0.05
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → SLL → PSD → RTM (sea)), it costs $7,062 (482%) more in freight; saves 25.0 days of expected transit; cuts delay probability from 69% to 3%; pulls in worst-case (P90) arrival from 35.8 to 2.8 days. Expected delay cost is lower by $3,305 (at $600/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-015-R1 NSA → SLL → PSD → RTM (sea): freight $1,467, E[time] 27.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-015-R2 NSA → SLL → CPT → RTM (sea): freight $1,930, E[time] 34.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-015-R3 NSA → SLL → CMB → PSD → RTM (sea): freight $2,131, E[time] 39.3 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-016: NSA→LAX, 2 TEU pharma | profile=high_value | deadline 13 d | budget $35,070
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-016-R4 — NSA → LAX (air)  [fastest, lowest exposure]
+  Freight $22,409 | expected transit 3.1 d (P50 3.0, P90 3.4) | P(delay≥1d) 4% | P(on time) 100% | exposure 0.06
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → PKG → LAX (sea)), it costs $18,546 (480%) more in freight; saves 27.9 days of expected transit; cuts delay probability from 53% to 4%; pulls in worst-case (P90) arrival from 35.9 to 3.4 days. Expected delay cost is lower by $2,731 (at $1,000/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-016-R1 NSA → PKG → LAX (sea): freight $3,863, E[time] 31.0 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-016-R2 NSA → CMB → PKG → HKG → LAX (sea): freight $4,813, E[time] 38.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-016-R3 NSA → PKG → HKG → SIN → LAX (sea): freight $5,140, E[time] 46.0 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-017: NSA→FXT, 1 TEU perishable | profile=urgent | deadline 31 d | budget $3,590
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-017-R1 — NSA → SLL → PSD → FXT (sea)  [cheapest, fastest]
+  Freight $1,512 | expected transit 27.9 d (P50 25.4, P90 36.6) | P(delay≥1d) 58% | P(on time) 73% | exposure 0.45
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 73% vs 85% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-017-R2 NSA → SLL → CPT → FXT (sea): freight $1,864, E[time] 32.9 d, P(on time) 48% — EXCLUDED: on-time probability 48% is well below the best achievable (73%).
+  ✗ SHP-017-R3 NSA → JEA → CMB → PSD → FXT (sea): freight $2,274, E[time] 42.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (73%).
+  ✗ SHP-017-R4 NSA → JEA → PSD → PIR → FXT (sea): freight $1,814, E[time] 35.9 d, P(on time) 30% — EXCLUDED: on-time probability 30% is well below the best achievable (73%).
+  ✗ SHP-017-R5 NSA → SLL → PSD → PIR → FXT (sea): freight $1,808, E[time] 34.5 d, P(on time) 41% — EXCLUDED: on-time probability 41% is well below the best achievable (73%).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 98% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-018: MUN→HAM, 8 TEU electronics | profile=high_value | deadline 41 d | budget $21,730
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-018-R2 — MUN → SLL → CPT → HAM (sea)
+  Freight $15,728 | expected transit 34.8 d (P50 33.2, P90 38.9) | P(delay≥1d) 45% | P(on time) 92% | exposure 0.27
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: MUN → JEA → PSD → HAM (sea)), it costs $3,905 (33%) more in freight; adds 6.5 days of expected transit; cuts delay probability from 63% to 45%; pushes out worst-case (P90) arrival from 36.7 to 38.9 days. Expected delay cost is lower by $8,242 (at $2,800/day for this cargo).
+  • Compared with the fastest option (R5: MUN → HAM (air)), it costs $52,993 (77%) less in freight; adds 32.0 days of expected transit; raises delay probability from 4% to 45%; pushes out worst-case (P90) arrival from 2.7 to 38.9 days.
+  • Runner-up is SHP-018-R3 (MUN → SLL → PSD → HAM (sea)); it loses by 0.663 score points, mainly on geopolitical/congestion exposure.
+
+ALTERNATIVES CONSIDERED
+  – SHP-018-R3 MUN → SLL → PSD → HAM (sea): freight $12,006, E[time] 28.1 d, P(on time) 97% — lower overall score (0.81 vs 0.15); weakest on geopolitical/congestion exposure.
+  – SHP-018-R1 MUN → JEA → PSD → HAM (sea): freight $11,823, E[time] 28.3 d, P(on time) 97% — lower overall score (0.84 vs 0.15); weakest on geopolitical/congestion exposure.
+  ✗ SHP-018-R4 MUN → CMB → SLL → PSD → HAM (sea): freight $16,066, E[time] 36.3 d, P(on time) 81% — EXCLUDED: on-time probability 81% below required 85%.
+  ✗ SHP-018-R5 MUN → HAM (air): freight $68,721, E[time] 2.8 d, P(on time) 100% — EXCLUDED: over budget ($68,721 > $21,730).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R3 if the time weight moved from 15% to 49%.
+
+====================================================================================================
+
+SHIPMENT SHP-019: CHE→NYC, 5 TEU perishable | profile=urgent | deadline 42 d | budget $18,890
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-019-R2 — CHE → CMB → CPT → NYC (sea)
+  Freight $10,577 | expected transit 38.0 d (P50 35.1, P90 43.7) | P(delay≥1d) 48% | P(on time) 85% | exposure 0.34
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → NYC (sea)), it costs $893 (9%) more in freight; adds 0.8 days of expected transit; cuts delay probability from 63% to 48%; pulls in worst-case (P90) arrival from 45.2 to 43.7 days. Expected delay cost is lower by $5,182 (at $3,000/day for this cargo).
+  • Compared with the fastest option (R5: CHE → NYC (air)), it costs $44,651 (81%) less in freight; adds 34.9 days of expected transit; raises delay probability from 2% to 48%; pushes out worst-case (P90) arrival from 3.3 to 43.7 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-019-R1 CHE → CMB → PSD → NYC (sea): freight $9,684, E[time] 37.1 d, P(on time) 82% — EXCLUDED: on-time probability 82% below required 85%.
+  ✗ SHP-019-R3 CHE → PKG → SIN → CPT → NYC (sea): freight $12,644, E[time] 45.1 d, P(on time) 36% — EXCLUDED: on-time probability 36% below required 85%.
+  ✗ SHP-019-R4 CHE → PKG → SIN → PSD → NYC (sea): freight $12,257, E[time] 46.8 d, P(on time) 33% — EXCLUDED: on-time probability 33% below required 85%.
+  ✗ SHP-019-R5 CHE → NYC (air): freight $55,228, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($55,228 > $18,890).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 85% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-020: MUN→FXT, 6 TEU commodity | profile=cost_sensitive | deadline 44 d | budget $10,700
+Priorities: cost 60%, time 15%, spread 15%, exposure 10%; must reach on time with ≥60% probability.
+
+RECOMMENDED: SHP-020-R1 — MUN → JEA → PSD → FXT (sea)  [cheapest, fastest]
+  Freight $9,137 | expected transit 27.4 d (P50 25.1, P90 36.0) | P(delay≥1d) 62% | P(on time) 98% | exposure 0.42
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-020-R2 MUN → SLL → CPT → FXT (sea): freight $11,532, E[time] 32.6 d, P(on time) 98% — EXCLUDED: over budget ($11,532 > $10,700).
+  ✗ SHP-020-R3 MUN → SLL → CMB → PSD → FXT (sea): freight $12,974, E[time] 40.9 d, P(on time) 72% — EXCLUDED: over budget ($12,974 > $10,700).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-021: NSA→HAM, 6 TEU standard | profile=balanced | deadline 35 d | budget $13,520
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-021-R1 — NSA → SLL → PSD → HAM (sea)  [cheapest]
+  Freight $9,039 | expected transit 27.5 d (P50 24.7, P90 36.3) | P(delay≥1d) 53% | P(on time) 87% | exposure 0.41
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R4: NSA → HAM (air)), it costs $45,032 (83%) less in freight; adds 24.9 days of expected transit; raises delay probability from 1% to 53%; pushes out worst-case (P90) arrival from 2.5 to 36.3 days.
+  • Runner-up is SHP-021-R2 (NSA → SLL → CPT → HAM (sea)); it loses by 0.110 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-021-R2 NSA → SLL → CPT → HAM (sea): freight $11,689, E[time] 34.7 d, P(on time) 74% — lower overall score (0.51 vs 0.40); weakest on expected landed cost.
+  ✗ SHP-021-R3 NSA → CMB → PSD → PIR → HAM (sea): freight $11,798, E[time] 40.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 70%.
+  ✗ SHP-021-R4 NSA → HAM (air): freight $54,071, E[time] 2.5 d, P(on time) 100% — EXCLUDED: over budget ($54,071 > $13,520).
+
+ROBUSTNESS
+  Same route wins in 82% of weight perturbations and 72% of delay-estimate perturbations → MODERATE.
+  Decision would switch to R2 if the spread weight moved from 20% to 28%.
+
+====================================================================================================
+
+SHIPMENT SHP-022: CHE→FXT, 7 TEU perishable | profile=urgent | deadline 32 d | budget $26,670
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-022-R1 — CHE → CMB → PSD → FXT (sea)  [cheapest]
+  Freight $11,649 | expected transit 32.3 d (P50 30.1, P90 41.1) | P(delay≥1d) 62% | P(on time) 61% | exposure 0.50
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 100% vs 85% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R3: CHE → FXT (air)), it costs $51,445 (82%) less in freight; adds 29.6 days of expected transit; raises delay probability from 7% to 62%; pushes out worst-case (P90) arrival from 3.0 to 41.1 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-022-R2 CHE → CMB → CPT → FXT (sea): freight $13,373, E[time] 35.3 d, P(on time) 40% — EXCLUDED: on-time probability 40% is well below the best achievable (100%).
+  ✗ SHP-022-R3 CHE → FXT (air): freight $63,094, E[time] 2.7 d, P(on time) 100% — EXCLUDED: over budget ($63,094 > $26,670).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 85% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-023: NSA→RTM, 3 TEU electronics | profile=high_value | deadline 36 d | budget $8,720
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-023-R1 — NSA → SLL → PSD → RTM (sea)  [cheapest]
+  Freight $4,425 | expected transit 27.1 d (P50 24.7, P90 35.5) | P(delay≥1d) 56% | P(on time) 92% | exposure 0.44
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R4: NSA → RTM (air)), it costs $22,841 (84%) less in freight; adds 24.2 days of expected transit; raises delay probability from 7% to 56%; pushes out worst-case (P90) arrival from 3.2 to 35.5 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-023-R2 NSA → SLL → CPT → RTM (sea): freight $5,818, E[time] 34.0 d, P(on time) 81% — EXCLUDED: on-time probability 81% below required 85%.
+  ✗ SHP-023-R3 NSA → JEA → CMB → PSD → RTM (sea): freight $6,702, E[time] 41.7 d, P(on time) 28% — EXCLUDED: on-time probability 28% below required 85%.
+  ✗ SHP-023-R4 NSA → RTM (air): freight $27,266, E[time] 2.9 d, P(on time) 100% — EXCLUDED: over budget ($27,266 > $8,720).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 68% of delay-estimate perturbations → MODERATE.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-024: MUN→HAM, 3 TEU electronics | profile=high_value | deadline 38 d | budget $15,660
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-024-R1 — MUN → JEA → PSD → HAM (sea)  [cheapest]
+  Freight $4,490 | expected transit 28.8 d (P50 26.2, P90 37.4) | P(delay≥1d) 59% | P(on time) 91% | exposure 0.51
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R3: MUN → HAM (air)), it costs $20,882 (82%) less in freight; adds 26.2 days of expected transit; raises delay probability from 1% to 59%; pushes out worst-case (P90) arrival from 2.5 to 37.4 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-024-R2 MUN → SLL → CPT → HAM (sea): freight $6,010, E[time] 36.4 d, P(on time) 73% — EXCLUDED: on-time probability 73% below required 85%.
+  ✗ SHP-024-R3 MUN → HAM (air): freight $25,372, E[time] 2.6 d, P(on time) 100% — EXCLUDED: over budget ($25,372 > $15,660).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 90% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-025: CHE→LAX, 4 TEU perishable | profile=urgent | deadline 33 d | budget $14,440
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-025-R1 — CHE → PKG → LAX (sea)  [cheapest]
+  Freight $7,037 | expected transit 27.2 d (P50 25.1, P90 31.6) | P(delay≥1d) 42% | P(on time) 93% | exposure 0.23
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R5: CHE → LAX (air)), it costs $38,705 (85%) less in freight; adds 24.1 days of expected transit; raises delay probability from 2% to 42%; pushes out worst-case (P90) arrival from 3.1 to 31.6 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-025-R2 CHE → SIN → CMB → PKG → LAX (sea): freight $10,944, E[time] 43.3 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-025-R3 CHE → CMB → PKG → LAX (sea): freight $8,188, E[time] 31.9 d, P(on time) 73% — EXCLUDED: on-time probability 73% below required 85%.
+  ✗ SHP-025-R4 CHE → PKG → CMB → SIN → LAX (sea): freight $10,503, E[time] 40.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-025-R5 CHE → LAX (air): freight $45,742, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($45,742 > $14,440).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-026: CHE→HAM, 1 TEU standard | profile=urgent | deadline 34 d | budget $2,530
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-026-R1 — CHE → CMB → PSD → HAM (sea)  [cheapest, fastest]
+  Freight $1,619 | expected transit 30.8 d (P50 28.7, P90 39.0) | P(delay≥1d) 54% | P(on time) 78% | exposure 0.43
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 78% vs 85% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-026-R2 CHE → CMB → CPT → HAM (sea): freight $2,030, E[time] 36.8 d, P(on time) 46% — EXCLUDED: on-time probability 46% is well below the best achievable (78%).
+  ✗ SHP-026-R3 CHE → SIN → CMB → PSD → HAM (sea): freight $2,356, E[time] 44.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (78%).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-027: CHE→NYC, 1 TEU perishable | profile=urgent | deadline 44 d | budget $4,560
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-027-R2 — CHE → CMB → CPT → NYC (sea)
+  Freight $2,146 | expected transit 38.4 d (P50 37.2, P90 44.2) | P(delay≥1d) 59% | P(on time) 89% | exposure 0.33
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → NYC (sea)), it costs $215 (11%) more in freight; adds 1.8 days of expected transit. Expected delay cost is lower by $659 (at $600/day for this cargo).
+  • Compared with the fastest option (R3: CHE → NYC (air)), it costs $9,145 (81%) less in freight; adds 35.3 days of expected transit; raises delay probability from 3% to 59%; pushes out worst-case (P90) arrival from 3.0 to 44.2 days.
+  • Runner-up is SHP-027-R1 (CHE → CMB → PSD → NYC (sea)); it loses by 0.258 score points, mainly on schedule predictability (P90-P50 spread).
+
+ALTERNATIVES CONSIDERED
+  – SHP-027-R1 CHE → CMB → PSD → NYC (sea): freight $1,931, E[time] 36.6 d, P(on time) 88% — lower overall score (0.50 vs 0.24); weakest on schedule predictability (P90-P50 spread).
+  ✗ SHP-027-R3 CHE → NYC (air): freight $11,291, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($11,291 > $4,560).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 72% of delay-estimate perturbations → MODERATE.
+  Decision would switch to R1 if the time weight moved from 50% to 68%.
+
+====================================================================================================
+
+SHIPMENT SHP-028: MUN→HAM, 7 TEU standard | profile=balanced | deadline 34 d | budget $19,530
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-028-R1 — MUN → JEA → PSD → HAM (sea)  [cheapest]
+  Freight $10,544 | expected transit 29.2 d (P50 26.8, P90 38.4) | P(delay≥1d) 66% | P(on time) 78% | exposure 0.49
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R4: MUN → HAM (air)), it costs $52,634 (83%) less in freight; adds 26.4 days of expected transit; raises delay probability from 3% to 66%; pushes out worst-case (P90) arrival from 2.7 to 38.4 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-028-R2 MUN → SLL → CPT → HAM (sea): freight $13,863, E[time] 35.4 d, P(on time) 55% — EXCLUDED: on-time probability 55% below required 70%.
+  ✗ SHP-028-R3 MUN → SIN → PSD → HAM (sea): freight $14,715, E[time] 40.8 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 70%.
+  ✗ SHP-028-R4 MUN → HAM (air): freight $63,178, E[time] 2.8 d, P(on time) 100% — EXCLUDED: over budget ($63,178 > $19,530).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 93% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-029: NSA→NYC, 2 TEU perishable | profile=urgent | deadline 34 d | budget $8,760
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-029-R1 — NSA → SLL → PSD → NYC (sea)  [cheapest]
+  Freight $3,658 | expected transit 31.9 d (P50 29.6, P90 40.3) | P(delay≥1d) 56% | P(on time) 74% | exposure 0.43
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 100% vs 85% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R3: NSA → NYC (air)), it costs $18,545 (84%) less in freight; adds 28.8 days of expected transit; raises delay probability from 3% to 56%; pushes out worst-case (P90) arrival from 3.4 to 40.3 days.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-029-R2 NSA → SLL → CPT → NYC (sea): freight $4,161, E[time] 35.7 d, P(on time) 56% — EXCLUDED: on-time probability 56% is well below the best achievable (100%).
+  ✗ SHP-029-R3 NSA → NYC (air): freight $22,203, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($22,203 > $8,760).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 90% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-030: MUN→HAM, 4 TEU pharma | profile=high_value | deadline 41 d | budget $14,710
+Priorities: cost 20%, time 15%, spread 30%, exposure 35%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-030-R2 — MUN → SLL → CPT → HAM (sea)
+  Freight $7,840 | expected transit 34.4 d (P50 32.6, P90 37.8) | P(delay≥1d) 42% | P(on time) 96% | exposure 0.20
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: MUN → JEA → PSD → HAM (sea)), it costs $1,743 (29%) more in freight; adds 4.7 days of expected transit; cuts delay probability from 73% to 42%. Expected delay cost is lower by $9,055 (at $2,000/day for this cargo).
+  • Compared with the fastest option (R5: MUN → HAM (air)), it costs $25,764 (77%) less in freight; adds 31.8 days of expected transit; raises delay probability from 2% to 42%; pushes out worst-case (P90) arrival from 2.7 to 37.8 days.
+  • Runner-up is SHP-030-R1 (MUN → JEA → PSD → HAM (sea)); it loses by 0.700 score points, mainly on geopolitical/congestion exposure.
+
+ALTERNATIVES CONSIDERED
+  – SHP-030-R1 MUN → JEA → PSD → HAM (sea): freight $6,097, E[time] 29.7 d, P(on time) 93% — lower overall score (0.85 vs 0.15); weakest on geopolitical/congestion exposure.
+  ✗ SHP-030-R3 MUN → JEA → PSD → PIR → HAM (sea): freight $7,189, E[time] 36.9 d, P(on time) 73% — EXCLUDED: on-time probability 73% below required 85%.
+  ✗ SHP-030-R4 MUN → JEA → CPT → HAM (sea): freight $7,914, E[time] 36.7 d, P(on time) 82% — EXCLUDED: on-time probability 82% below required 85%.
+  ✗ SHP-030-R5 MUN → HAM (air): freight $33,604, E[time] 2.6 d, P(on time) 100% — EXCLUDED: over budget ($33,604 > $14,710).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the time weight moved from 15% to 51%.
+
+====================================================================================================
+
+SHIPMENT SHP-031: NSA→NYC, 5 TEU perishable | profile=urgent | deadline 14 d | budget $85,800
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-031-R3 — NSA → NYC (air)  [fastest, lowest exposure]
+  Freight $57,933 | expected transit 3.1 d (P50 3.0, P90 3.0) | P(delay≥1d) 3% | P(on time) 100% | exposure 0.06
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → SLL → PSD → NYC (sea)), it costs $48,902 (541%) more in freight; saves 31.7 days of expected transit; cuts delay probability from 66% to 3%; pulls in worst-case (P90) arrival from 45.2 to 3.0 days. Expected delay cost is lower by $19,827 (at $3,000/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-031-R1 NSA → SLL → PSD → NYC (sea): freight $9,031, E[time] 34.9 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-031-R2 NSA → SLL → CPT → NYC (sea): freight $10,330, E[time] 35.8 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-032: NSA→NYC, 7 TEU standard | profile=balanced | deadline 41 d | budget $19,160
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-032-R2 — NSA → SLL → CPT → NYC (sea)
+  Freight $14,456 | expected transit 35.9 d (P50 33.6, P90 40.4) | P(delay≥1d) 45% | P(on time) 91% | exposure 0.28
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: NSA → SLL → PSD → NYC (sea)), it costs $1,748 (14%) more in freight; adds 2.0 days of expected transit; cuts delay probability from 69% to 45%; pulls in worst-case (P90) arrival from 42.5 to 40.4 days. Expected delay cost is lower by $2,913 (at $840/day for this cargo).
+  • Compared with the fastest option (R5: NSA → NYC (air)), it costs $66,536 (82%) less in freight; adds 32.7 days of expected transit; raises delay probability from 4% to 45%; pushes out worst-case (P90) arrival from 3.6 to 40.4 days.
+  • Runner-up is SHP-032-R1 (NSA → SLL → PSD → NYC (sea)); it loses by 0.502 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-032-R1 NSA → SLL → PSD → NYC (sea): freight $12,708, E[time] 33.9 d, P(on time) 86% — lower overall score (0.65 vs 0.15); weakest on expected landed cost.
+  ✗ SHP-032-R3 NSA → JEA → CMB → CPT → NYC (sea): freight $18,886, E[time] 46.7 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 70%.
+  ✗ SHP-032-R4 NSA → JEA → CMB → PSD → NYC (sea): freight $17,777, E[time] 46.4 d, P(on time) 27% — EXCLUDED: on-time probability 27% below required 70%.
+  ✗ SHP-032-R5 NSA → NYC (air): freight $80,992, E[time] 3.2 d, P(on time) 100% — EXCLUDED: over budget ($80,992 > $19,160).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 98% of delay-estimate perturbations → ROBUST.
+  Decision would switch to R1 if the time weight moved from 25% to 60%.
+
+====================================================================================================
+
+SHIPMENT SHP-033: NSA→LAX, 4 TEU standard | profile=balanced | deadline 51 d | budget $12,330
+Priorities: cost 35%, time 25%, spread 20%, exposure 20%; must reach on time with ≥70% probability.
+
+RECOMMENDED: SHP-033-R1 — NSA → PKG → LAX (sea)  [cheapest]
+  Freight $7,426 | expected transit 32.4 d (P50 30.8, P90 39.3) | P(delay≥1d) 55% | P(on time) 99% | exposure 0.30
+
+WHY THIS ROUTE
+  • It is also the cheapest option by freight.
+  • Compared with the fastest option (R4: NSA → LAX (air)), it costs $37,658 (84%) less in freight; adds 29.3 days of expected transit; raises delay probability from 3% to 55%; pushes out worst-case (P90) arrival from 3.5 to 39.3 days.
+  • Runner-up is SHP-033-R2 (NSA → SLL → CMB → SIN → LAX (sea)); it loses by 0.851 score points, mainly on expected landed cost.
+
+ALTERNATIVES CONSIDERED
+  – SHP-033-R2 NSA → SLL → CMB → SIN → LAX (sea): freight $10,384, E[time] 42.7 d, P(on time) 89% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+  – SHP-033-R3 NSA → JEA → CMB → SIN → LAX (sea): freight $10,638, E[time] 44.4 d, P(on time) 85% — dominated by R1 (which is at least as good on cost, time, predictability and exposure).
+  ✗ SHP-033-R4 NSA → LAX (air): freight $45,084, E[time] 3.1 d, P(on time) 100% — EXCLUDED: over budget ($45,084 > $12,330).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-034: CHE→RTM, 3 TEU perishable | profile=urgent | deadline 32 d | budget $10,990
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-034-R1 — CHE → CMB → PSD → RTM (sea)  [cheapest, fastest]
+  Freight $4,897 | expected transit 31.3 d (P50 29.4, P90 39.7) | P(delay≥1d) 68% | P(on time) 65% | exposure 0.47
+  ⚠ NO route met all hard constraints (deadline). Best-effort mode: kept the routes closest to the deadline (best achievable P(on time) is 65% vs 85% required), then applied the weighted score. Recommend planner review: renegotiate deadline/budget or consider a faster mode.
+
+WHY THIS ROUTE
+  • It is both the cheapest and the fastest option, so no cost-vs-time trade-off was needed.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-034-R2 CHE → CMB → CPT → RTM (sea): freight $5,987, E[time] 35.6 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (65%).
+  ✗ SHP-034-R3 CHE → PKG → SIN → CPT → RTM (sea): freight $7,119, E[time] 42.9 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (65%).
+  ✗ SHP-034-R4 CHE → SIN → CMB → PSD → RTM (sea): freight $6,776, E[time] 41.2 d, P(on time) 0% — EXCLUDED: on-time probability 0% is well below the best achievable (65%).
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
+
+====================================================================================================
+
+SHIPMENT SHP-035: CHE→HAM, 8 TEU perishable | profile=urgent | deadline 14 d | budget $85,130
+Priorities: cost 15%, time 50%, spread 25%, exposure 10%; must reach on time with ≥85% probability.
+
+RECOMMENDED: SHP-035-R4 — CHE → HAM (air)  [fastest, lowest exposure]
+  Freight $67,119 | expected transit 2.6 d (P50 2.5, P90 2.5) | P(delay≥1d) 2% | P(on time) 100% | exposure 0.04
+
+WHY THIS ROUTE
+  • Compared with the cheapest option (R1: CHE → CMB → PSD → HAM (sea)), it costs $53,971 (410%) more in freight; saves 29.8 days of expected transit; cuts delay probability from 66% to 2%; pulls in worst-case (P90) arrival from 40.9 to 2.5 days. Expected delay cost is lower by $23,530 (at $4,800/day for this cargo).
+  • It is also the fastest option by expected transit time.
+
+ALTERNATIVES CONSIDERED
+  ✗ SHP-035-R1 CHE → CMB → PSD → HAM (sea): freight $13,148, E[time] 32.4 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-035-R2 CHE → CMB → CPT → HAM (sea): freight $15,748, E[time] 36.2 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+  ✗ SHP-035-R3 CHE → SIN → CPT → HAM (sea): freight $18,247, E[time] 39.2 d, P(on time) 0% — EXCLUDED: on-time probability 0% below required 85%.
+
+ROBUSTNESS
+  Same route wins in 100% of weight perturbations and 100% of delay-estimate perturbations → ROBUST.
+  No single-weight change flips the decision.
